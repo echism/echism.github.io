@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
+<style>body{background-color: #3478bd;}</style>
+<style>form{background-color: #ffffff; margin: 2%;padding:2%}</style>
+<style>.subfile{display: none;}</style>
+<title>submit file generator</title>
+
+<script>
+
+function createSubFile(){
+	var textinfo = ['universe = ','grid_resource = ','executable = ','arguments = ','log = ' ,'output = ','error = ','transfer_input_files = ','transfer_output_files = ','request_memory = ','request_disk = ','request_cpus = ','Queue '];
+	var fields = document.getElementsByTagName("input");
+	var outputs = document.getElementsByClassName("subfile");
+	for (var i=0;i<fields.length;i++)
+	{
+		
+		if (fields[i].value.length>0)
+		{
+			outputs[i].innerHTML+=textinfo[i]+fields[i].value;
+			outputs[i].style.display='block';
+			
+		};
+		
+	};
+	var forminfo = document.getElementsByClassName("a");
+		for (var i=0;i<forminfo.length;i++)
+		{
+			forminfo[i].style.display='none';
+		};
+};
+function resetAll(){
+	var forminfo = document.getElementsByClassName("a");
+		for (var i=0;i<forminfo.length;i++)
+		{
+			forminfo[i].style.display='block';
+		}
+	var forminput = document.getElementsByTagName("input");
+		for (var i=0;i<forminput.length;i++)
+		{
+			forminput[i].value='';
+		}
+	var subf = document.getElementsByClassName("subfile");
+		for (var i=0;i<subf.length;i++)
+		{
+			subf[i].innerHTML='';
+			subf[i].style.display='none';
+		}
+
+}
+
+</script>
+
+</head>
+
+<body>
+<form id="form0">
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<p class="subfile"></p>
+<h2>submit file generator</h2>
+<p class="a">Choose a universe (ie. vanilla, grid, parallel) <input type="text" maxlength="8"></p>
+
+<p class="a" >if you want to use one specific grid resource, enter the url here:<input type="text" maxlength="50"></p>
+
+<p class="a">What's the name of your executable file? (include file extension)<input type="text" maxlength="50"></p>
+
+<p class="a">If you're going to pass any arguments to your executable, enter arguments:<input type="text" maxlength="50"></p>
+
+<p  class="a">Choose a name (and directory, if desired) for your logfile or logfiles:<input type="text" maxlength="50"></p>
+
+<p  class="a">Choose a name (and directory, if desired) for your output file or files:<input type="text" maxlength="50"></p>
+
+<p  class="a">Choose a name (and directory if desired) for your error file or error files:<input type="text" maxlength="50"></p>
+
+<p  class="a">Specify any other input files, if applicable:<input type="text" maxlength="50"></p>
+
+<p  class="a">Specify any other output files, if applicable:<input type="text" maxlength="50">  </p>
+
+<p  class="a">Maximum anticipated memory usage (specify KB, MB, GB or TB):<input type="text" maxlength="7"></p>
+
+<p  class="a">Maximum anticipated disk usage (specify KB, MB, GB or TB):<input type="text" maxlength="7"></p>
+
+<p class="a">Number of CPUs you're requesting (only necessary for parallel jobs):<input type="text" maxlength="2"></p>
+
+<p class="a">How many times would you like to run this job, if more than one?<input type="text" maxlength="5"></p>
+
+</form>
+<button onclick="createSubFile()" value="submitm">Create this submit file</button>
+<button onclick="resetAll()" value="resetmk">reset</button>
+</body>
+
+</html>
+
