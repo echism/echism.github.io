@@ -85,6 +85,16 @@ align-items: stretch;
 
 flex-wrap: wrap;
 }
+#ref{
+border-radius: 10px;
+font-size: 2rem;
+border:3px solid black;
+	position:absolute;
+	left: 0px;
+  top: 100px;
+  z-index: 2;
+display:none;
+	}
 }
 @media screen and (max-width: 479px) and (orientation: portrait){#cards > div{
 border-radius: 10px;
@@ -129,6 +139,16 @@ align-items: stretch;
 
 flex-wrap: wrap;
 }
+#ref{
+border-radius: 10px;
+font-size: 2rem;
+border:3px solid black;
+	position:absolute;
+	left: 0px;
+  top: 100px;
+  z-index: 2;
+display:none;
+	}
 }
 @media screen and (max-height: 479px) and (orientation: landscape){#cards > div{
 border-radius: 10px;
@@ -157,7 +177,9 @@ background-color:pink;
 font-family: Helvetica, Arial, sans-serif;
 -webkit-box-shadow: 0px 0px 0px 4px #fff;
 -moz-box-shadow: 0px 0px 0px 4px #fff;
-box-shadow: 0px 0px 0px 4px #fff;}
+box-shadow: 0px 0px 0px 4px #fff;
+}
+
 
 .selected
 {
@@ -173,4 +195,14 @@ align-items: stretch;
 
 flex-wrap: wrap;
 }
+#ref{
+border-radius: 10px;
+font-size: 2rem;
+border:3px solid black;
+	position:absolute;
+	left: 0px;
+  top: 100px;
+  z-index: 2;
+  display:none;
+	}
 }
