@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<head><meta charset="utf-8"><link href="style.css" rel="stylesheet" type="text/css"> <meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
+<body>
+<div id="cards" class="flex-container"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+
+<div id="answers" class="flex-container"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+<footer><button id="ref" onClick="window.location.reload()">You win! Play Again?</button></footer>
+</body>
+<script>
+var cards=document.getElementById("cards");
+const nums=[];
+const bigNums=[];
+const ans=[];
+var eachCard=cards.childNodes;
+var eachAnswer=answers.childNodes;
+for(var i=0;i<(eachCard.length);i++){
+nums[i]=Math.floor(Math.random() * 10)+3};
+for(var i=0;i<(eachCard.length);i++){
+bigNums[i]=Math.floor(Math.random() * 87)+13};
+for(var i=0;i<eachCard.length;i++){eachCard[i].textContent=bigNums.pop()+'/'+nums.shift()}
+for(var i=0;i<(eachCard.length);i++){var divisor=eval(eachCard[i].textContent); divisor=Math.floor(divisor);var leadNum=eachCard[i].textContent.substring(0, eachCard[i].textContent.indexOf('/'));var tailNum=eachCard[i].textContent.substring(eachCard[i].textContent.indexOf('/')+1);var remainder=leadNum%tailNum;ans[i]=divisor+'r'+remainder;}
+var len= ans.length;
+for(var i=0;i<(len-1);i++){var tmp=Math.floor(Math.random()*len);ans.splice(tmp,0,ans[0]);ans.shift();}
+for(var i=0;i<(len-1);i++){var tmp=Math.floor(Math.random()*len);ans.splice(tmp,0,ans[len-1]);ans.pop();}
+for(var i in ans){eachAnswer[i].textContent=ans[i]}
+document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement,
+        text = target.textContent || target.innerText;
+		if (target.tagName='div'&&target.childNodes.length==1){target.classList.toggle('selected');}
+		var green=document.getElementsByClassName('selected');
+		if (green.length==2){if (green[0].textContent.includes("/")){var divisor=eval(green[0].textContent);divisor=Math.floor(divisor);var leadNum=green[0].textContent.substring(0, green[0].textContent.indexOf('/'));var tailNum=green[0].textContent.substring(green[0].textContent.indexOf('/')+1);var remainder=leadNum%tailNum;var green1=divisor+'r'+remainder}else{var green1=green[0].textContent};if (green[1].textContent.includes("/")){var divisor=eval(green[1].textContent);divisor=Math.floor(divisor);var leadNum=green[1].textContent.substring(0, green[1].textContent.indexOf('/'));var tailNum=green[1].textContent.substring(green[1].textContent.indexOf('/')+1);var remainder=leadNum%tailNum;var green2=divisor+'r'+remainder} else{var green2=green[1].textContent};if(green1==green2&&green[0].parentNode!==green[1].parentNode){green[0].style.visibility='hidden';green[0].classList.toggle('selected');green[0].style.visibility='hidden';green[0].classList.toggle('selected')}else{green[0].classList.toggle('selected');green[0].classList.toggle('selected');}}
+		var complete=0;
+		for (var i=0;i<eachCard.length;i++){if(eachCard[i].style.visibility=='hidden'){complete++;}if(complete==eachCard.length){document.getElementById('ref').style.display="block"};}
+}, false);
+const pics=['babyelephant.jpg','cat.jpg','meerkat.jpg','puppy2.jpg','blackbear.jpg','fox.jpg','puppy3.jpg','tigercub.jpg','bunnies.jpg','giraffe.jpg','polarbear.jpg','puppy4.jpg','calf.jpg','kittens.jpg','puppy.jpg','redpanda.jpg'];
+document.body.style.backgroundImage = "url("+pics[Math.floor(Math.random() * pics.length)]+")";
+document.body.style.backgroundSize = "contain";
+
+</script>
+</html>
