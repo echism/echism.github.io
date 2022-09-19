@@ -15,14 +15,18 @@ var eachAnswer=answers.childNodes;
 for(var i=0;i<(eachCard.length);i++){
 smallnums[i]=Math.floor(Math.random() * 15)+1;
 };
+console.log(smallnums)
 var numsprime= new Set(smallnums);
-var uniques= numsprime.length;
+var uniques= numsprime.size;
+console.log(numsprime.size);
 var go=true;
-while (go==true){if(uniques<eachCard.length+1){
-window.smallnums[smallnums.length+1]=Math.floor(Math.random() * 15)+1;
-window.numsprime= new Set(window.smallnums);
-window.uniques= numsprime.length;
-window.smallnums=Array.from(numsprime.values());}
+while (go==true){if(uniques<eachCard.length){
+smallnums[smallnums.length]=Math.floor(Math.random() * 15)+1;
+numsprime= new Set(smallnums);
+uniques= numsprime.size;
+console.log(uniques)
+smallnums=[...numsprime];
+console.log(smallnums);}
 else{window.go=false}
 }
 console.log(smallnums)
