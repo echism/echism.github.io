@@ -1,99 +1,76 @@
-<!doctype html>
-<html>
-<head> 
-<title>Elizabeth</title>
-<meta charset="utf-8">
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<style> 
-body {
-    background-image: url("sky-scene.jpg");
-    background-color: rgba(255, 255, 255);
-    background-size: cover; 
-}
-</style>
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<style>line{stroke:rgb(0,0,0);stroke-width:.5;} nav{background-color:#444444;color:#FFFFFF;margin:0 0 0 0;} body{background-color:#FFFACC;margin:0px;} a{text-decoration:none;color:inherit;} li{display:inline-block;padding:1%;}
+li:hover{text-decoration:none;background-color:#FFFFFF;border-bottom:5px solid #CC0000;color:#000000;} ul{list-style-type:none} #calc{float: right;font-size:14px;}</style>
+<title>E. Prout Github Pages Site</title> 
 </head>
-<body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">home</a></li>
-      </ul>
-    </div>
-    </div>
-</nav>
-<div class="container">
-  <div class="jumbotron">
- <h2 style="text-align:center"> Hello, I'm Elizabeth. You are most likely here to see one of the following:</h2>
- <div class="row" style="background-color:#E6E6FA;">
-    <div class="col-md-4">
-    <p></p>
-    <h4> An SVG Animation</h4>
-    <a href="MATHS-shapes.html" class="btn btn-info" role="button">SVG</a>
-    <p></p>
-    </div>
-    <div class="col-md-4">
-    <p></p>
-    <h4> My Curriculum Vitae</h4>
-    <a href="cv.html" class="btn btn-info" role="button">Peruse CV</a>
-	   <p></p>
-    </div>
-	     <div class="col-md-4">
-	     <h4> Another SVG animation</h4>
-    		<a href="butterfly.html" class="btn btn-info" role="button">SVG</a>
-		     <p></p>
-		     </div>
-    </div>
-	 <div class="row" style="background-color:#E6E6FA;">
-    <div class="col-md-4">
-    <p></p>
-    <h4> Addition match game</h4>
-    <a href="add.html" class="btn btn-info" role="button">Play</a>
-    <p></p>
-    </div>
-    <div class="col-md-4">
-    <p></p>
-    <h4> Subtraction match game</h4>
-    <a href="subtract.html" class="btn btn-info" role="button">Play</a>
-	   <p></p>
-    </div>
-	 <div class="col-md-4">
-	<h4> Multiplication match game</h4>
-    <a href="mult.html" class="btn btn-info" role="button">Play</a>
-	<p></p></div>
-	</div>
-	 <div class="row" style="background-color:#E6E6FA;">
-    <div class="col-md-4">
-    <p></p>
-    <h4> Division match game</h4>
-    <a href="divide.html" class="btn btn-info" role="button">Play</a>
-    <p></p>
-    </div>
-    <div class="col-md-4">
-    <p></p>
-    <h4> Square numbers match game</h4>
-    <a href="squares.html" class="btn btn-info" role="button">Play</a>
-	   <p></p>
-    </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    </div>
-    </div>
-    </div>
-    <br>
-    <div class="container">
-	<nav class="navbar navbar-inverse navbar-fixed-bottom">
-  		<div class="container-fluid">
-       		</div>
-		</div>
-	</body>
+<body onload="setupFractal()" onmousemove="fractalize()">
+<nav><ul><li><a href="index.html">home</a></li><li><a href="squares.html">square game</a></li><li><a href="add.html">addition game</a></li><li><a href="mult.html">multiplication game</a></li><li><a href="subtract.html">subtraction game</a></li><li><a href="division.html">division game</a></li>
+<li><a href="MATHS-shapes.html">d3.js animation (space)</a></li><li><a href="butterfly.html">d3.js animation (butterfly)</a></li></ul></nav>
+<svg id="fractal"></svg><p id="calc">Calculations:<span id="num"></span></p>
+</body>
+<script type="text/javascript">
+//set nav dimensions
+calcnum=document.getElementById("num")
+num.textContent=0;
+let navWidth=window.outerWidth;
+let navHeight=window.outerHeight*.08;
+const nav=document.getElementsByTagName("nav")[0];
+nav.style.width=navWidth+'px';
+nav.style.minHeight=navHeight+'px';
+nav.style.paddingTop=navHeight*.2+'px';
+//section gives size for SVG, responds to initial device width but I chose not to make it resizable.
+//if I were to make it resizable I would do an event on resize that would alter these variables
+//but I don't think it's worth it for this use case
+const animation=document.getElementById("fractal");
+let availWidth=window.innerWidth*.9
+let availHeight=window.innerHeight*.9;
+animation.width.baseVal.valueAsString=availWidth;
+animation.height.baseVal.valueAsString=availHeight;
+//this array is where I'm storing cartesian coordinates for lines
+var points=[];
+//I chose to make them objects
+class triPoint {
+	constructor(px,py,px2,py2) {
+	this.x1 =px;
+	this.y1 =py;
+	this.x2=px2;
+	this.y2=py2;
+  }
+}
+//I pick the first three coordinates based on window size and equilateral formulas, the lines are drawn on load
+function setupFractal(){
+points[0]=new triPoint(availWidth*.1,availHeight*.9,availWidth*.9,availHeight*.9);
+points[1]=new triPoint(availWidth*.5,(availHeight*.9)-availHeight*(Math.sqrt(3)/2),availWidth*.9,availHeight*.9);
+points[2]=new triPoint(availWidth*.5,(availHeight*.9)-availHeight*(Math.sqrt(3)/2),availWidth*.1,availHeight*.9);
+//JS has weak typing, so I'm going to take advantage  of it! Here I coerce ints into strings and concatenate with strings, then use the string as HTML
+for (let i=0;i<3;i++){fractal.innerHTML+='<line x1='+points[i].x1+' y1='+points[i].y1+' x2='+points[i].x2+' y2="'+points[i].y2+'">';num.textContent++}
+}
+//Further points are generated from midpoints of lines
+function fractalize(){
+//the bank array is to hold line objects we are using right now, essentially
+let bank=[]; 
+//I remove the first three lines from the points array, but store them in the bank array
+for(i=0;i<3;i++){bank.unshift(points.shift())}
+//this is the midpoint-to-midpoint line constructor
+for (let i=0;i<3;i++){
+class fractalLine {
+	constructor() {
+	this.x1=(bank[i].x1+bank[i].x2)/2;
+	this.y1=(bank[i].y1+bank[i].y2)/2;
+	//using modulus operator to connect line 2 to line 0
+	this.x2=(bank[(i+1)%3].x1+bank[(i+1)%3].x2)/2;
+	this.y2=(bank[(i+1)%3].y1+bank[(i+1)%3].y2)/2;
+  }
+}
+//add appropriate line to end of points array, length is not 0 indexed in JS so it won't overwrite anything
+points[points.length]=new fractalLine();
+num.textContent++;
+//write line in SVG
+fractal.innerHTML+='<line x1='+points[points.length-1].x1+' y1='+points[points.length-1].y1+' x2='+points[points.length-1].x2+' y2="'+points[points.length-1].y2+'">';}
+//we're done with those 3 lines
+for (let i=0;i<3;i++){bank.pop;}
+}
+</script>
 </html>
