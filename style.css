@@ -94,14 +94,14 @@ font-family: Helvetica, Arial, sans-serif;
 -webkit-box-shadow: 0px 0px 0px 4px #fff;
 -moz-box-shadow: 0px 0px 0px 4px #fff;
 box-shadow: 0px 0px 0px 4px #fff;}
-.bg-1{}
-.bg-2{}
-.bg-3{}	
-.bg-4{}
-.bg-5{}
-.bg-6{}
-.bg-7{}	
-.bg-8{}
+.bg-1{background-image:url('bunnies.jpg')}
+.bg-2{background-image:url('kittens.jpg')}
+.bg-3{background-image:url('fox.jpg')}	
+.bg-4{background-image:url('polarbear.jpg')}
+.bg-5{background-image:url('puppy.jpg')}
+.bg-6{background-image:url('puppy2.jpg')}
+.bg-7{background-image:url('redpanda.jpg')}	
+.bg-8{background-image:url('puppy4.jpg')}
 							     
 .selected
 {
@@ -167,10 +167,10 @@ box-shadow: 0px 0px 0px 4px #fff;}
 .bg-2{ background-image: url('babyelephant.jpg')}
 .bg-3{ background-image: url('cat.jpg')}	
 .bg-4{ background-image: url('calf.jpg')}
-.bg-5{}
-.bg-6{}
-.bg-7{}	
-.bg-8{}
+.bg-5{ background-image: url('giraffe.jpg')}
+.bg-6{ background-image: url('meerkat.jpg')}
+.bg-7{ background-image: url('tiger.jpg')}	
+.bg-8{background-image: url('joey.jpg')}
 .selected
 {
 background-color:lime !important;
@@ -234,12 +234,12 @@ box-shadow: 0px 0px 0px 4px #fff;
 }
 .bg-1{background-image:url('bunnies.jpg')}
 .bg-2{background-image:url('kittens.jpg')}
-.bg-3{}	
-.bg-4{}
-.bg-5{}
-.bg-6{}
-.bg-7{}	
-.bg-8{}
+.bg-3{background-image:url('fox.jpg')}	
+.bg-4{background-image:url('polarbear.jpg')}
+.bg-5{background-image:url('puppy.jpg')}
+.bg-6{background-image:url('puppy2.jpg')}
+.bg-7{background-image:url('redpanda.jpg')}	
+.bg-8{background-image:url('puppy4.jpg')}
 
 .selected
 {
