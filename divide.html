@@ -35,7 +35,7 @@ document.addEventListener('click', function(e) {
 }, false);
 const numpics=8;
 	//*['babyelephant.jpg','cat.jpg','meerkat.jpg','puppy2.jpg','blackbear.jpg','fox.jpg','puppy3.jpg','tigercub.jpg','bunnies.jpg','giraffe.jpg','polarbear.jpg','puppy4.jpg','calf.jpg','kittens.jpg','puppy.jpg','redpanda.jpg'];*/
-const randomIndex = Math.floor(Math.random() * numpics);
+const randomIndex = Math.floor(Math.random() * numpics)+1;
     document.body.classList.add(`bg-${randomIndex}`);
 document.body.style.backgroundSize = "cover";
 document.body.style.backgroundRepeat = "no-repeat";
