@@ -163,10 +163,10 @@ font-family: Helvetica, Arial, sans-serif;
 -webkit-box-shadow: 0px 0px 0px 4px #fff;
 -moz-box-shadow: 0px 0px 0px 4px #fff;
 box-shadow: 0px 0px 0px 4px #fff;}
-.bg-1{}
-.bg-2{}
-.bg-3{}	
-.bg-4{}
+.bg-1{ background-image: url('blackbear.jpg')}
+.bg-2{ background-image: url('babyelephant.jpg')}
+.bg-3{ background-image: url('cat.jpg')}	
+.bg-4{ background-image: url('calf.jpg')}
 .bg-5{}
 .bg-6{}
 .bg-7{}	
@@ -232,8 +232,8 @@ font-family: Helvetica, Arial, sans-serif;
 -moz-box-shadow: 0px 0px 0px 4px #fff;
 box-shadow: 0px 0px 0px 4px #fff;
 }
-.bg-1{}
-.bg-2{}
+.bg-1{background-image:url('bunnies.jpg')}
+.bg-2{background-image:url('kittens.jpg')}
 .bg-3{}	
 .bg-4{}
 .bg-5{}
