@@ -273,3 +273,45 @@ box-shadow: 0px 0px 0px 2px #fff;
 display:none;
 	}
 }
+    .notebook {background: linear-gradient(
+90deg,
+    rgba(5, 5, 5, 0.1) 0%,
+    rgba(5, 5, 5, 0.1) 20%,
+    #ed53a3 20%,
+    #ed53a3 20.25%,
+    rgba(5, 5, 5, 0.1) 20.25%,
+    rgba(5, 5, 5, 0.1) 100%
+),
+linear-gradient(
+    rgba(5, 5, 5, 0.1) 0%,
+    rgba(5, 5, 5, 0.1) 20%,
+    #6aabc2 20%,
+    #6aabc2 20.25%,
+    rgba(5, 5, 5, 0.1) 20.25%,
+	rgba(5, 5, 5, 0.1) 40%,
+    #6aabc2 40%,
+    #6aabc2 40.25%,
+    rgba(5, 5, 5, 0.1) 40.25%,
+    rgba(5, 5, 5, 0.1) 60%,
+    #6aabc2 60%,
+	#6aabc2 60.25%,
+    rgba(5, 5, 5, 0.1) 60.25%,
+	rgba(5, 5, 5, 0.1) 80%,
+    #6aabc2 80%,
+	#6aabc2 80.25%,
+    rgba(5, 5, 5, 0.1) 80.25%,
+    rgba(5, 5, 5, 0.1) 100%
+);
+
+background-size: cover;
+  background-attachment: fixed;
+    }
+	 .indie-flower-regular {
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size:2em;
+}
+.space-links{	padding-top: 1%;}
+.texty-urls{ text-decoration:none;
+	   color:black;}
