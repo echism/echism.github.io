@@ -33,9 +33,11 @@ document.addEventListener('click', function(e) {
 		var complete=0;
 		for (var i=0;i<eachCard.length;i++){if(eachCard[i].style.visibility=='hidden'){complete++;}if(complete==eachCard.length){document.getElementById('ref').style.display="block"};}
 }, false);
-const pics=['babyelephant.jpg','cat.jpg','meerkat.jpg','puppy2.jpg','blackbear.jpg','fox.jpg','puppy3.jpg','tigercub.jpg','bunnies.jpg','giraffe.jpg','polarbear.jpg','puppy4.jpg','calf.jpg','kittens.jpg','puppy.jpg','redpanda.jpg'];
-document.body.style.backgroundImage = "url("+pics[Math.floor(Math.random() * pics.length)]+")";
-document.body.style.backgroundSize = "contain";
+const numpics=8;
+	const randomIndex = Math.floor(Math.random() * numpics)+1;
+    document.body.classList.add(`bg-${randomIndex}`);
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundRepeat = "no-repeat";
 
 </script>
 </html>
