@@ -35,7 +35,9 @@ document.addEventListener('click', function(e) {
 }, false);
 const pics=['babyelephant.jpg','cat.jpg','meerkat.jpg','puppy2.jpg','blackbear.jpg','fox.jpg','puppy3.jpg','tigercub.jpg','bunnies.jpg','giraffe.jpg','polarbear.jpg','puppy4.jpg','calf.jpg','kittens.jpg','puppy.jpg','redpanda.jpg'];
 document.body.style.backgroundImage = "url("+pics[Math.floor(Math.random() * pics.length)]+")";
-document.body.style.backgroundSize = "100%";
+document.body.style.backgroundSize = "contain";
+document.body.style.backgroundRepeat = "no-repeat";
+
 
 </script>
 </html>
