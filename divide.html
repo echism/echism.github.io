@@ -35,8 +35,8 @@ document.addEventListener('click', function(e) {
 }, false);
 const numpics=8;
 	//*['babyelephant.jpg','cat.jpg','meerkat.jpg','puppy2.jpg','blackbear.jpg','fox.jpg','puppy3.jpg','tigercub.jpg','bunnies.jpg','giraffe.jpg','polarbear.jpg','puppy4.jpg','calf.jpg','kittens.jpg','puppy.jpg','redpanda.jpg'];*/
-console.log('bg-'+Math.floor(Math.random() * numpics));
-//document.body.classList.add = "bg-"+Math.floor(Math.random() * numpics);
+const bgclass='bg-'+Math.floor(Math.random() * numpics);
+//document.body.classList.add = $bgclass);
 document.body.style.backgroundSize = "120%";
 document.body.style.backgroundRepeat = "no-repeat";
 
