@@ -1,10 +1,11 @@
 @media screen and (min-width: 3000px){#cards > div{
 border-radius: .5rem;
 font-size: 12rem;
+font-weight: 600;
 border:1rem solid black;
 padding:2rem;
 width:22%;
-background-color:#F5E7DE;
+background-color:#ffb01d;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -15,13 +16,14 @@ box-shadow: 0px 0px 0px 4px #fff;}
 #answers > div{
 border-radius: .5rem;
 font-size: 12rem;
+font-weight: 600;
 border:1rem solid black;
 padding: 2rem;
 width:22%;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color:#7ed5ea;
+background-color:#FF0000;
 font-family: Helvetica, Arial, sans-serif;
 -webkit-box-shadow: 0px 0px 0px 4px #fff;
 -moz-box-shadow: 0px 0px 0px 4px #fff;
@@ -69,10 +71,11 @@ display:none;
 @media screen and (min-width: 480px) and (max-width: 3000px){#cards > div{
 border-radius: 10px;
 font-size: 2em;
+font-weight: 600;
 border:10px solid black;
 padding:.63em;
 width:20%;
-background-color:#F5E7DE;
+background-color:#ffb01d;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -83,13 +86,14 @@ box-shadow: 0px 0px 0px 4px #fff;}
 #answers > div{
 border-radius: 10px;
 font-size: 2em;
+font-weight: 600;
 border:10px solid black;
 padding:.63em;
 width:20%;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color:#7ed5ea;
+background-color:#FF0000;
 font-family: Helvetica, Arial, sans-serif;
 -webkit-box-shadow: 0px 0px 0px 4px #fff;
 -moz-box-shadow: 0px 0px 0px 4px #fff;
@@ -138,10 +142,11 @@ display:none;
 @media screen and (max-width: 479px) and (orientation: portrait){#cards > div{
 border-radius: 10px;
 font-size: 2rem;
+font-weight: 600;
 border:10px solid black;
 padding:.8rem;
 width:20%;
-background-color:#F5E7DE;
+background-color:#ffb01d;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -158,7 +163,7 @@ width:20%;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color:#7ed5ea;
+background-color:#FF0000;
 font-family: Helvetica, Arial, sans-serif;
 -webkit-box-shadow: 0px 0px 0px 4px #fff;
 -moz-box-shadow: 0px 0px 0px 4px #fff;
@@ -206,10 +211,11 @@ display:none;
 @media screen and (max-height: 479px) and (orientation: landscape){#cards > div{
 border-radius: 10px;
 font-size: 2rem;
+font-weight: 600;
 border:10px solid black;
 padding:.9rem;
 width:9%;
-background-color:#F5E7DE;
+background-color:#ffb01d;
 display: flex;
 justify-content: center;
 align-items: center;
@@ -220,13 +226,14 @@ box-shadow: 0px 0px 0px 4px #fff;}
 #answers > div{
 border-radius: 10px;
 font-size: 2rem;
+font-weight: 600;
 border:10px solid black;
 padding:.9rem;
 width:9%;
 display: flex;
 justify-content: center;
 align-items: center;
-background-color:#7ed5ea;
+background-color:FF0000;
 font-family: Helvetica, Arial, sans-serif;
 -webkit-box-shadow: 0px 0px 0px 4px #fff;
 -moz-box-shadow: 0px 0px 0px 4px #fff;
